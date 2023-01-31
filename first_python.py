@@ -1,17 +1,16 @@
+"""
+using qt designer to load ui
+"""
 import sys
 
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication
+from PyQt5 import uic
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    w = QWidget()
-    # set my window title
-    w.setWindowTitle("first pyqt program")
-    # add a push button
-    btn = QPushButton("This is a button")
-    # set w as the parent of the button
-    btn.setParent(w)
-    # show the window
-    w.show()
-    # program exec and get into a continuous loop
+    ui = uic.loadUi("./HomeScreen.ui")
+    ui.show()
     app.exec()
+
+
+
