@@ -18,7 +18,15 @@ class MyWindow(QWidget):
         get all the widgets from ui and bind signals and slots if needed
         """
         # load ui file
-        self.ui = uic.loadUi("./HomeScreen.ui")
+        self.ui = uic.loadUi("./CardResultUI.ui")
+        confirm_btn = self.ui.pushButton
+        confirm_btn.clicked.connect(self.close_self)
+
+    def close_self(self, arg):
+        """
+        slot function, close this interface
+        """
+        sys.exit()
 
 
 if __name__ == '__main__':

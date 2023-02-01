@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Home</class>
+ <widget class="QWidget" name="Home">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -32,7 +32,7 @@
      <x>130</x>
      <y>20</y>
      <width>381</width>
-     <height>365</height>
+     <height>411</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">

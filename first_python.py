@@ -29,12 +29,47 @@ class MyWindow(QWidget):
         help_btn = self.ui.pushButton_5
 
         inventory_btn.clicked.connect(self.open_inventory)
+        profile_btn.clicked.connect(self.open_profile)
+        help_btn.clicked.connect(self.open_help)
+        get_cards_btn.clicked.connect(self.open_get_cards)
+        resources_btn.clicked.connect(self.open_resources)
+
+    def open_profile(self, arg):
+        """
+        slot function, open Profile interface and close current one
+        """
+        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python', '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/Profile.py'])
+        sys.exit()
 
     def open_inventory(self, arg):
         """
         slot function, open inventory interface and close current one
         """
-        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python', '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/Profile.py'])
+        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python',
+                          '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/Inventory.py'])
+        sys.exit()
+
+    def open_get_cards(self, arg):
+        """
+        slot function, open get cards interface and close current one
+        """
+        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python',
+                          '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/GetCards.py'])
+        sys.exit()
+
+    def open_resources(self, arg):
+        """
+        slot function, open resources interface and close current one
+        """
+        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python',
+                          '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/Resources.py'])
+        sys.exit()
+
+    def open_help(self, arg):
+        """
+        slot function, pop up help message.ß
+        """
+        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python', '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/Help.py'])
 
 
 if __name__ == '__main__':

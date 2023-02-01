@@ -1,7 +1,6 @@
 """
 using qt designer to load ui
 """
-import subprocess
 import sys
 
 from PyQt5.QtWidgets import QApplication, QWidget
@@ -19,17 +18,7 @@ class MyWindow(QWidget):
         get all the widgets from ui and bind signals and slots if needed
         """
         # load ui file
-        self.ui = uic.loadUi("./Inventory.ui")
-        home_btn = self.ui.pushButton
-        home_btn.clicked.connect(self.open_home)
-
-    def open_home(self, arg):
-        """
-        slot function, open home interface and close current one
-        """
-        subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python',
-                          '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/first_python.py'])
-        sys.exit()
+        self.ui = uic.loadUi("./Help.ui")
 
 
 if __name__ == '__main__':
