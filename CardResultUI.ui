@@ -42,7 +42,30 @@
      </widget>
     </item>
     <item>
-     <widget class="QTextBrowser" name="textBrowser"/>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="font">
+       <font>
+        <family>Optima</family>
+        <pointsize>48</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+        <underline>true</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="acceptRichText">
+       <bool>true</bool>
+      </property>
+      <property name="source">
+       <url>
+        <string>file:///Users/yuchenfeng/Desktop/OSU/CS361/pyqt/result.txt</string>
+       </url>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton">
@@ -61,6 +84,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pipe.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -3,6 +3,7 @@ using qt designer to load ui
 """
 import subprocess
 import sys
+import time
 
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5 import uic
@@ -19,11 +20,15 @@ class MyWindow(QWidget):
         get all the widgets from ui and bind signals and slots if needed
         """
         # load ui file
+        f = open("result.txt", "r")
+        line = f.readline()
         self.ui = uic.loadUi("./CardResultUI.ui")
         confirm_btn = self.ui.pushButton
         confirm_btn.clicked.connect(self.close_self)
         get_another_btn = self.ui.pushButton_2
         get_another_btn.clicked.connect(self.get_another)
+
+
 
     def close_self(self, arg):
         """
@@ -35,6 +40,11 @@ class MyWindow(QWidget):
         """
         slot function, reopen this program and closing current one.
         """
+        # overwrite pipeline.txt value with "run"
+        f = open("pipeline.txt", "w")
+        f.write("run")
+        f.close()
+        time.sleep(5)
         subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python',
                           '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/CardResult.py'])
         sys.exit()

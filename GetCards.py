@@ -3,6 +3,7 @@ using qt designer to load ui
 """
 import subprocess
 import sys
+import time
 
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5 import uic
@@ -38,8 +39,14 @@ class MyWindow(QWidget):
         """
         slot function, open card results interface
         """
+        # overwrite pipeline.txt value with "run"
+        f = open("pipeline.txt", "w")
+        f.write("run")
+        f.close()
+        time.sleep(5)
         subprocess.Popen(['/Users/yuchenfeng/opt/anaconda3/envs/pyqt5/bin/python',
                           '/Users/yuchenfeng/Desktop/OSU/CS361/pyqt/CardResult.py'])
+
 
 
 if __name__ == '__main__':
