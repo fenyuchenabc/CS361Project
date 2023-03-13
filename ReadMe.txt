@@ -1,1 +1,1 @@
-This is the repo for my CS361 Project.
+Repo for CS361 Project---Card Collection Game
